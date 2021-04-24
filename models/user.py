@@ -12,8 +12,8 @@ class User(BaseModel):
     email = CharField(max_length=100)
     phone = CharField(max_length=12, null=True)
     card_number = CharField(max_length=9)
-    first_name = ForeignKeyField(FirstName)
-    last_name = ForeignKeyField(LastName)
+    first_name = ForeignKeyField(FirstName, backref="users")
+    last_name = ForeignKeyField(LastName, backref="users")
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
