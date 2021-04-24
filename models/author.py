@@ -9,8 +9,8 @@ from models.last_name import LastName
 
 
 class Author(BaseModel):
-    first_name = ForeignKeyField(FirstName, column_name="first_name_id", backref="authors")
-    last_name = ForeignKeyField(LastName, column_name="last_name_id", backref="authors")
+    first_name = ForeignKeyField(FirstName, backref="authors")
+    last_name = ForeignKeyField(LastName, backref="authors")
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
