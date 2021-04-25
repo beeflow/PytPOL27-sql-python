@@ -9,7 +9,7 @@ from models.last_name import LastName
 
 
 class Author(BaseModel):
-    first_name = ForeignKeyField(FirstName, backref="authors")
+    first_name = ForeignKeyField(FirstName)
     last_name = ForeignKeyField(LastName, backref="authors")
 
     def __str__(self):

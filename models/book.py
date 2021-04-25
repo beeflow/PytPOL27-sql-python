@@ -17,3 +17,8 @@ class Book(BaseModel):
 
     def __str__(self):
         return self.title
+
+#
+# class Poem(BaseModel):
+#     title = CharField(max_length=250, null=False, column_name="book_title")
+#     author = ForeignKeyField(Author, backref="poems")
