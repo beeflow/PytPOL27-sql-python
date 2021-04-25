@@ -3,14 +3,17 @@
 Author Rafal Przetakowski <rafal.p@beeflow.co.uk>"""
 from common.view import View
 from models.book import Book
+from utils.book_search import find_book
 
 
 class BooksView(View):
     def get_menu_item(self):
-        return "Books list"
+        return "Search books"
 
     def get(self):
-        for book in Book.select():
+        search_param = input(" book title or author name: ")
+
+        for book in find_book(search_param):
             print(book.title)
 
         print()
