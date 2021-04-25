@@ -7,7 +7,7 @@ from common.base_model import BaseModel
 
 
 class FirstName(BaseModel):
-    name = CharField(max_length=15, column_name="first_name")
+    name = CharField(max_length=15, column_name="first_name", unique=True)
 
     def __str__(self):
         return self.name

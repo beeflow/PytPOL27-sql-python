@@ -11,5 +11,6 @@ DATABASE_NAME = "container_db"
 
 INSTALLED_APPS = [
     "views.books_view.BooksView",
+    "views.users_view.AddUserView",
     "views.exit_view.ExitView",
 ]

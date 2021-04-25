@@ -17,3 +17,12 @@ class User(BaseModel):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+    @classmethod
+    def create(cls, **query):
+        """Dodaje automatycznie numer karty bibliotecznej w formacie 000000001."""
+        users_count = User.select().count()
+        card_number = str(users_count + 1).zfill(9)
+        query.update({"card_number": card_number})
+
+        return super().create(**query)

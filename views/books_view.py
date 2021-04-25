@@ -2,7 +2,6 @@
 
 Author Rafal Przetakowski <rafal.p@beeflow.co.uk>"""
 from common.view import View
-from models.book import Book
 from utils.book_search import find_book
 
 
