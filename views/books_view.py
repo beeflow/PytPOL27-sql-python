@@ -7,7 +7,7 @@ from models.book import Book
 
 class BooksView(View):
     def get_menu_item(self):
-        return ("Books list")
+        return "Books list"
 
     def get(self):
         for book in Book.select():
