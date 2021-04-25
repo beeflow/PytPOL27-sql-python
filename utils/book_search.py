@@ -6,6 +6,11 @@ from models.book import Book
 
 
 def find_book(search_param):
-    return Book.select().join(Author).where(
-        (Book.title == search_param) | ((Author.first_name == search_param) | (Author.last_name == search_param))
+    # @todo FIXME :P
+    BookAuthor = Book.authors.get_through_model()
+
+    return Book.select().join(BookAuthor).join(Author).where(
+        (Book.title == search_param) | (
+                (Author.first_name.name == search_param) | (Author.last_name.name == search_param)
+        )
     )
