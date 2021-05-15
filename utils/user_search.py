@@ -21,4 +21,6 @@ def find_user(search_param):
     except FirstName.DoesNotExist:
         pass
 
-    return []
+    return User.select().where(
+        (User.email == search_param) | (User.card_number == search_param) | (User.phone == search_param)
+    )

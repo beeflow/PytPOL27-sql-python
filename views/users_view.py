@@ -33,6 +33,6 @@ class SearchUserView(View):
         search_param = input(" User name or surname: ")
 
         for user in find_user(search_param):
-            print(f"User: {user}")
+            print(f"User: {user}, card number: {user.card_number}")
 
         print()
