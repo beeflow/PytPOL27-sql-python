@@ -13,6 +13,6 @@ class BooksView(View):
         search_param = input(" book title or author name: ")
 
         for book in find_book(search_param):
-            print(book.title)
+            print(f"Title: {book.title}")
 
         print()
