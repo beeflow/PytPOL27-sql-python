@@ -12,16 +12,20 @@ def find_book(search_param):
     BookAuthor = Book.authors.get_through_model()
 
     # 1. zapytanie o nazwisko
-    LastName.select().where(LastName.name == "King")
+    try:
+        last_name = LastName.get(LastName.name == search_param)
+    except LastName.DoesNotExist:
+        last_name = None
 
     # 2. zapytanie o imię
+    try:
+        first_name = FirstName.get(FirstName.name == search_param)
+    except FirstName.DoesNotExist:
+        first_name = None
 
-    # 3. zapytanie o autora o imieniu lub nazwisku
-
-    # 4. zapytanie o książkę o tytule lub autorze
-
-    return Book.select().join(BookAuthor).join(Author).where(
+    # 3. zapytanie o książkę o tytule lub autorze
+    return Book.select().left_outer_join(BookAuthor).left_outer_join(Author).where(
         (Book.title == search_param) | (
-                (Author.first_name.name == search_param) | (Author.last_name.name == search_param)
+                (Author.first_name == first_name) | (Author.last_name == last_name)
         )
     )
