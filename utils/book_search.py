@@ -21,7 +21,7 @@ def find_book(search_param):
                 (Book.title == search_param) | (Author.last_name == last_name)
             )
 
-        return result.where(Book.title == search_param)
+        return result.where((Book.title == search_param) | (Book.id == int(search_param)))
 
     BookAuthor = Book.authors.get_through_model()
 

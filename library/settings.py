@@ -13,5 +13,6 @@ INSTALLED_APPS = [
     "views.books_view.BooksView",
     "views.users_view.AddUserView",
     "views.users_view.SearchUserView",
+    "views.rent_book_view.RentBookView",
     "views.exit_view.ExitView",
 ]
