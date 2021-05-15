@@ -11,15 +11,12 @@ from models.last_name import LastName
 
 def find_book(search_param):
     def where(result, first_name, last_name):
+        """ @todo FIXME :P """
         if first_name:
-            return result.where(
-                (Book.title == search_param) | (Author.first_name == first_name)
-            )
+            return result.where(Author.first_name == first_name)
 
         if last_name:
-            return result.where(
-                (Book.title == search_param) | (Author.last_name == last_name)
-            )
+            return result.where (Author.last_name == last_name)
 
         return result.where(Book.title == search_param)
 
