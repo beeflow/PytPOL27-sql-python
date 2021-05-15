@@ -12,5 +12,6 @@ DATABASE_NAME = "change_me"
 INSTALLED_APPS = [
     "views.books_view.BooksView",
     "views.users_view.AddUserView",
+    "views.users_view.SearchUserView",
     "views.exit_view.ExitView",
 ]
