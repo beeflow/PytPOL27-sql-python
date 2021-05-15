@@ -239,7 +239,7 @@ from `user`
          inner join last_name on user.last_name_id = last_name.id;
 
 -- !!! Nie da się stworzyć funkcji tak od razu :P
--- 1. zaloguj się z konsoli (terminala ww Pycharm) do obrazu dockerowego bazy danych:
+-- 1. zaloguj się z konsoli (terminala w Pycharm) do obrazu dockerowego bazy danych:
 -- docker-compose exec db /bin/bash
 -- w obrazie dockerowym wpisujemy polecenie:
 -- mysql -p

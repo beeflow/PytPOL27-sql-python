@@ -3,3 +3,4 @@ my-db
 mytap
 .env
 environments/.env
+venv

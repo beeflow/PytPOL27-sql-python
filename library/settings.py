@@ -3,11 +3,11 @@
 Author Rafal Przetakowski <rafal.p@beeflow.co.uk>"""
 DATABASE_CONFIG = {
     "host": "localhost",
-    "user": "user",
-    "password": "password",
+    "user": "change_me",
+    "password": "change_me",
     "port": 3306
 }
-DATABASE_NAME = "container_db"
+DATABASE_NAME = "change_me"
 
 INSTALLED_APPS = [
     "views.books_view.BooksView",

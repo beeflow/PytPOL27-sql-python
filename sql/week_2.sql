@@ -92,3 +92,7 @@ begin
 end;
 
 update user_book_rent set bc_id = 2 where id = 8;
+
+alter table book_author rename book_author_through;
+alter table book_author_through rename column ba_book_id to book_id;
+alter table book_author_through rename column ba_author_id to author_id;
