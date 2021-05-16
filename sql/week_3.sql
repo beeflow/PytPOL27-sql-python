@@ -103,3 +103,6 @@ select count(id) as book_copy, title, price from books_with_prices
 inner join book_bought bb on books_with_prices.id = bb.book_id
 where price = (select min(price) from books_with_prices)
 group by id;
+
+-- średnia cena książki
+select cast(avg(price) as decimal(15,2)) as avg_price from books_with_prices;
